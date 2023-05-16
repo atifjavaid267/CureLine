@@ -59,3 +59,7 @@ gem 'rubocop'
 gem 'rubocop-rails'
 
 gem 'devise'
+
+gem 'tailwindcss-rails', '~> 2.0'
+
+gem 'erb-formatter'
