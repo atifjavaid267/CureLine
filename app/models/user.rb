@@ -8,4 +8,12 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :name, format: { with: /\A[a-zA-Z ]+\z/, message: 'only allows letters and spaces' }
+
+  def admin?
+    role == 'admin'
+  end
+
+  def member?
+    role == 'member'
+  end
 end
