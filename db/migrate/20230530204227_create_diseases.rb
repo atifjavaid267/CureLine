@@ -1,7 +1,7 @@
 class CreateDiseases < ActiveRecord::Migration[6.1]
   def change
     create_table :diseases do |t|
-      t.integer :user_id
+      t.integer :user_id, null: false
       t.string :name
       t.timestamps
     end
