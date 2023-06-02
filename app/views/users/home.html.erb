@@ -1,10 +1,15 @@
 <div class="bg-bg_img bg-cover h-screen">
+  <% unless user_signed_in? %>
+    <div class="fixed w-full top-0 z-10">
+      <%= render "shared/navbar" %>
+    </div>
+  <% end %>
   <div class="flex flex-col my-auto justify-center items-center h-screen bg-gray-800 bg-opacity-75">
     <div class="flex flex-col text-white rounded-lg py-5 px-10 justify-center items-center mx-10">
       <h1 class="font-bold text-2xl sm:text-4xl md:text-6xl lg:text-8xl mb-5">CureLine</h1>
-      <p class="sm:px-20 md:px-36 lg:px-56 xl:px-72">
+      <%# <p class="sm:px-20 md:px-36 lg:px-56 xl:px-72">
         "A platform to revolutionize the way we approach wellness. With advanced technologies and personalized solutions, we empower individuals to take control of their health, providing them with the tools and resources they need to achieve optimal well-being."
-      </p>
+      </p> %>
     </div>
   </div>
 </div>
