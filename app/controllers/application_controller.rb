@@ -24,10 +24,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # def load_and_authorize_resource
-  #   authorize! params[:action].to_sym, current_user
-  # end
-
   def render_404
     render file: "#{Rails.root}/public/404.html", status: :not_found
   end
