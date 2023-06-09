@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :name, format: { with: /\A[a-zA-Z ]+\z/, message: 'only allows letters and spaces' }
+
+  enum role: { admin: 0, member: 1 }
 end
