@@ -6,16 +6,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
-    <%= stylesheet_link_tag "application",
-    media: "all",
-    "data-turbolinks-track": "reload" %>
-    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+      <div class="fixed w-full top-0 z-10">
+        <%= render "shared/navbar" %>
+      </div>
+    <% end %>
+    <%= render "shared/flashes" %>
     <%= yield %>
   </body>
 </html>
