@@ -9,5 +9,14 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :diseases, only: %i[new create index destroy] do
+    resources :disease_remedies, only: %i[new create]
+    member do
+      get :view_remedies
+    end
+  end
+
+  resources :remedies, only: %i[new create index destroy]
+
+  resources :healthconcerns
 end

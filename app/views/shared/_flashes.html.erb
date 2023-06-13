@@ -1,2 +1,32 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% if notice || alert %>
+  <div class="flex flex-row justify-center <%= notice ? "bg-green-600" : "bg-red-500" %>">
+    <div class="text-black alert alert-info alert-dismissible fade show py-2" role="alert">
+      <%= notice ? notice : alert %>
+      <button type="button" class="close bg-black px-1 text-sm text-white rounded-lg" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+<% end %>
+<script>
+  Marking files as viewed can help keep track of your progress, but will not affect your submitted reviewViewed
+  Comment on this file
+  @@ -0,0 +1,21 @@
+  function hideFlashMessages() {
+    const flashMessages = document.querySelectorAll(".alert-dismissible");
+
+    flashMessages.forEach(message => {
+      const closeButton = message.querySelector(".close");
+
+      closeButton.addEventListener("click", () => {
+        message.remove();
+      });
+
+      message.classList.add("hide-flash");
+
+      setTimeout(() => {
+        message.remove();
+      }, 5000);
+    });
+  }
+</script>

@@ -1,0 +1,8 @@
+<% if @healthconcerns.empty? %>
+  <%= render partial: "shared/data_not_found", locals: { message: 'No Health Concern Found!' } %>
+<% else %>
+  <div class="m-10">
+    <% @healthconcerns.each do |h| %>
+    <% end %>
+  </div>
+<% end %>

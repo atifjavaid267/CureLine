@@ -1,0 +1,24 @@
+<div class="flex flex-col w-full h-screen fixed">
+  <div class="bg-yellow-300 flex justify-center my-10">
+    <h3 class="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold"><%= @disease.name %></h3>
+  </div>
+  <div class="bg-yellow-300 flex mx-10 justify-between items-center">
+    <h3 class="text-md md:text-xl lg:text-2xl xl:text-3xl font-semibold">Remedies:</h3>
+    <% if can? :new, DiseaseRemedy %>
+      <%= link_to "Add remedy to disease", new_disease_disease_remedy_path(@disease), class: "text-blue-600 hover:text-blue-800" %>
+    <% end %>
+  </div>
+  <div class="flex flex-col lg:flex-row justify-center w-full">
+    <% unless @remedies.by_category("fruit").empty? %>
+      <div class="w-1/6">
+        <h4 class="font-semibold py-5">Fruits</h4>
+        <ul>
+          <% @remedies.by_category("fruit").each do |remedy| %>
+            <li><%= remedy.name %></li>
+            <br>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

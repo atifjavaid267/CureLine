@@ -1,0 +1,8 @@
+<% if @remedies.empty? %>
+  <%= render partial: "shared/data_not_found", locals: { message: 'No Remedy Found!' } %>
+<% else %>
+  <div class="m-10">
+    <% @remedies.each do |remedy| %>
+    <% end %>
+  </div>
+<% end %>
