@@ -1,8 +1,9 @@
 <% if @remedies.empty? %>
   <%= render partial: "shared/data_not_found", locals: { message: 'No Remedy Found!' } %>
 <% else %>
-  <div class="m-10">
-    <% @remedies.each do |remedy| %>
-    <% end %>
+  <h3 class="mt-10 flex justify-center text-blue-700 font-semibold text-xl lg:text-2xl xl:text-3xl">All Remedies</h3>
+  <%= link_to "Add Remedy", new_remedy_path, class: "flex justify-end text-md hover:text-lg mr-10 text-blue-500 hover:text-blue-700" %>
+  <div class="m-10 flex flex-col lg:flex-row items-center lg:items-start justify-center">
+    <%= render partial: "list_remedies", locals: { message: @remedies } %>
   </div>
 <% end %>

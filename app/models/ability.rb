@@ -10,6 +10,7 @@ class Ability
       can %i[new create], DiseaseRemedy
     elsif user.member?
       can %i[index view_remedies], Disease
+      can %i[create index destroy], HealthConcern, user_id: user.id
     end
   end
 end

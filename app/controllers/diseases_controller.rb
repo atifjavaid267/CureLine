@@ -4,6 +4,7 @@
 class DiseasesController < ApplicationController
   load_and_authorize_resource
   before_action :store_location, only: %i[view_remedies]
+
   def new; end
 
   def create

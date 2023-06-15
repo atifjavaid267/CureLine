@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :diseases, only: %i[new create index destroy] do
     resources :disease_remedies, only: %i[new create]
+    resources :healthconcerns, only: %i[create]
+
     member do
       get :view_remedies
     end
@@ -18,5 +20,5 @@ Rails.application.routes.draw do
 
   resources :remedies, only: %i[new create index destroy]
 
-  resources :healthconcerns
+  resources :healthconcerns, only: %i[index destroy]
 end
