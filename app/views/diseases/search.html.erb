@@ -1,0 +1,5 @@
+<% if @diseases.any? %>
+  <%= render partial: "diseases/disease_remedies", locals: { message: @remedies } %>
+<% else %>
+  <p class="mt-28">No results found.</p>
+<% end %>

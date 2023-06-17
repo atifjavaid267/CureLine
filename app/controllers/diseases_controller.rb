@@ -32,7 +32,24 @@ class DiseasesController < ApplicationController
   end
 
   def view_remedies
-    @remedies = @disease.remedies
+    @remedies = @disease.remedies.sort_by_name('asc')
+  end
+
+  def search
+    @selected_disease = params[:selected_disease]
+
+    if @selected_disease == 'Search'
+      redirect_to search_disease_path(search_query: params[:search_query])
+    else
+      @disease = Disease.find_by(name: @selected_disease)
+
+      if @disease
+        redirect_to view_remedies_disease_path(@disease)
+      else
+        flash.now[:alert] = 'No disease found.'
+        render root_path
+      end
+    end
   end
 
   private
