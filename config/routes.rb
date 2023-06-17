@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     member do
       get :view_remedies
     end
+    collection do
+      get 'search'
+    end
   end
 
   resources :remedies, only: %i[new create index destroy]
