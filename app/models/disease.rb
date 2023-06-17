@@ -8,14 +8,15 @@ class Disease < ApplicationRecord
   has_many :health_concerns
   validates :name, presence: true
 
-  after_destroy :destroy_associated_disease_remedies
+  after_destroy :destroy_associated_records
 
   scope :sort_by_alphabet, -> { order(name: 'asc') }
   scope :get_by_name, ->(name) { where(name:) }
 
   private
 
-  def destroy_associated_disease_remedies
+  def destroy_associated_records
     disease_remedies.destroy_all
+    health_concerns.destroy_all
   end
 end
