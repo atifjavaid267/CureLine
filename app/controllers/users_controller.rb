@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# class UsersController
 class UsersController < ApplicationController
-  def home; end
+  skip_before_action :authenticate_user!, only: %i[home]
+  def home
+    @diseases = Disease.all
+  end
 end

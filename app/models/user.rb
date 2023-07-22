@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# class User
 class User < ApplicationRecord
   has_many :diseases
   has_many :remedies

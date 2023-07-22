@@ -1,0 +1,17 @@
+<%= render "shared/back" %>
+<div class="flex flex-col items-center justify-center w-full h-screen fixed bottom-0">
+  <div class="p-5 max-w-sm bg-white border border-black-200 rounded-lg shadow border-transparent">
+    <h3 class="font-bold">Set Remedy to <%= @disease.name %></h3>
+    <%= form_with(model: [@disease, @disease_remedy], local: true) do |form| %>
+      <div class="bg-white p-4 rounded-lg shadow-md w-full px-20">
+        <div class="form-group mb-3">
+          <%= form.label "Select Remedy", class: "block font-medium text-gray-700" %> <br>
+          <%= form.select :remedy_id, options_from_collection_for_select(@remedies, :id, :name), {}, class: "block w-full rounded-md shadow-sm form-select sm:text-sm sm:leading-5" %>
+        </div>
+        <div class="actions flex justify-center">
+          <%= form.submit "Submit", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

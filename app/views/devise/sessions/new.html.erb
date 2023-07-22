@@ -3,7 +3,7 @@
   <div class="flex flex-col bg-white lg:w-1/2 h-screen justify-center">
     <div class="flex flex-row justify-center">
       <div>
-        <h1 class="flex justify-center font-bold text-3xl text-indigo-900 mb-10">Sign in</h1>
+        <h1 class="flex justify-center font-bold text-3xl text-gray-900 mb-10">Sign in</h1>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field border-b-2 my-2">
             <%= f.email_field :email, placeholder: "Email", autocomplete: "email", class: "border-none" %>
@@ -25,7 +25,7 @@
             <% end %>
           </div>
           <div
-            class="flex justify-center actions w-full rounded-sm bg-blue-500 hover:bg-blue-700 text-white py-2 my-4">
+            class="flex justify-center actions w-full rounded-sm bg-gray-700 hover:bg-gray-900 text-white py-2 my-4">
             <%= f.submit "LOGIN" %>
           </div>
         <% end %>

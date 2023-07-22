@@ -67,3 +67,5 @@ gem 'devise'
 gem 'tailwindcss-rails', '~> 2.0'
 
 gem 'cancancan'
+
+gem 'will_paginate', '~> 4.0'
