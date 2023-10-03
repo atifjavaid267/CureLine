@@ -14,13 +14,7 @@ class RemediesController < ApplicationController
     end
   end
 
-  def index
-    # @fruits = @remedies.fruit
-    # @vegetables = @remedies.vegetable
-    # @nuts = @remedies.nuts
-    # @dairies = @remedies.dairy
-    # @others = @remedies.other
-  end
+  def index; end
 
   def destroy
     if @remedy.destroy
