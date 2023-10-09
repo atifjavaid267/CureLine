@@ -1,7 +1,0 @@
-<% if !user_signed_in? %>
-  <%= render "root" %>
-<% elsif current_user.admin? %>
-  <%= render "admin_dashboard" %>
-<% elsif current_user.member? %>
-  <%= render "member_dashboard" %>
-<% end %>
