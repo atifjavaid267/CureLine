@@ -6,16 +6,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
   </head>
+
   <body>
-    <% if user_signed_in? %>
-      <div class="fixed w-full top-0 z-10">
-        <%= render "shared/navbar" %>
-      </div>
-      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 relative flex h-16 bg-gray-900"></div>
-    <% end %>
-    <%= render "shared/flashes" %>
-    <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <main class="container mx-auto mt-28 px-5 flex">
+      <%= yield %>
+    </main>
   </body>
 </html>
