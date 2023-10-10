@@ -13,9 +13,10 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <main class="container mx-auto mt-28 px-5 flex">
+    <%= render partial: "shared/navbar" %>
+    <main class="w-full">
       <%= yield %>
     </main>
+    <%= render partial: "shared/footer" %>
   </body>
 </html>
