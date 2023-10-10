@@ -1,6 +1,5 @@
 # Load the Rails application.
-require_relative 'application'
-require 'will_paginate'
+require_relative "application"
 
 # Initialize the Rails application.
 Rails.application.initialize!
