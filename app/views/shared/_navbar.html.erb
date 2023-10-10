@@ -1,0 +1,41 @@
+
+<% menu = menu_items %>
+<div class="fixed top-0 z-40 w-full h-16">
+  <nav class="flex pl-5 lg:pl-8 items-center justify-between h-full w-full bg-white bg-opacity-30 backdrop-blur-lg">
+    <div class="flex items-center">
+      <%= image_tag "logo.svg", class: "h-16 w-16 pr-3" %>
+      <%= link_to "CureLine", root_path, class: "text-3xl text-primary" %>
+    </div>
+    <div class="flex items-center h-full first-letter:first-line:justify-between">
+      <ul class="hidden lg:flex space-x-3 text-lg mr-14">
+        <% menu.each do |name, path| %>
+          <li><%= link_to name, path, class: "px-3 py-2 hover:bg-gray-200 rounded-lg" %></li>
+        <% end %>
+      </ul>
+      <div class="hidden lg:flex justify-between w-36 h-2/3 bg-primary rounded-l-full pl-1 pr-4">
+        <%= image_tag "user.svg", class: "my-1" %>
+        <% if user_signed_in? %>
+          <%= link_to "Sign out", destroy_user_session_path, class: "self-center text-white text-xl hover:font-semibold" %>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path, class: "self-center text-white text-xl hover:font-semibold" %>
+        <% end %>
+      </div>
+      <div class="lg:hidden">
+        <%= image_tag "menu.svg", class: "h-8 w-8 mr-6 my-2" %>
+      </div>
+    </div>
+  </nav>
+  <div class="lg:hidden z-50 top-0 h-auto text-md bg-primary bg-opacity-95 flex flex-col px-2 pb-3 rounded-b-3xl">
+    <%= image_tag "cross.svg", class: "h-8 w-8 my-2 self-end" %>
+    <ul class="flex flex-col space-y-5 py-5 text-white mr-5 ml-3 items-left">
+      <% menu.each do |name, path| %>
+        <li><%= link_to name, path, class: "hover:bg-gray-200 rounded-lg" %></li>
+      <% end %>
+    </ul>
+    <% if user_signed_in? %>
+      <%= link_to "Sign out", destroy_user_session_path, class: "bg-gray py-2 px-4 text-white font-semibold text-white text-center rounded-xl mt-5" %>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path, class: "bg-gray py-2 px-10 text-white font-semibold text-center rounded-xl mt-5" %>
+    <% end %>
+  </div>
+</div>
