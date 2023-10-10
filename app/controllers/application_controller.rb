@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+<<<<<<< Updated upstream
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -41,5 +42,13 @@ class ApplicationController < ActionController::Base
 
   def render_500
     render file: "#{Rails.root}/public/500.html", status: :internal_server_error
+=======
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+>>>>>>> Stashed changes
   end
 end
