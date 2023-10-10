@@ -1,5 +1,5 @@
 <% if notice || alert %>
-  <div class="flex flex-row justify-center <%= notice ? "bg-green-600" : "bg-red-500" %> pt-1">
+  <div class="flex flex-row justify-center <%= notice ? "bg-green-600" : "bg-red-500" %> mt-16">
     <div class="text-black alert alert-info alert-dismissible fade show py-2" role="alert">
       <%= notice ? notice : alert %>
       <button type="button" class="close bg-black px-1 text-sm text-white rounded-lg" data-dismiss="alert" aria-label="Close">
@@ -9,9 +9,6 @@
   </div>
 <% end %>
 <script>
-  Marking files as viewed can help keep track of your progress, but will not affect your submitted reviewViewed
-  Comment on this file
-  @@ -0,0 +1,21 @@
   function hideFlashMessages() {
     const flashMessages = document.querySelectorAll(".alert-dismissible");
 

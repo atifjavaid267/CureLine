@@ -22,6 +22,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem "turbo-rails"
+gem "stimulus-rails"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -44,8 +47,8 @@ group :development do
   gem 'spring'
 
   gem 'erb-formatter'
-
   gem 'htmlbeautifier'
+  gem 'erb_lint'
 end
 
 group :test do
@@ -69,3 +72,5 @@ gem 'tailwindcss-rails', '~> 2.0'
 gem 'cancancan'
 
 gem 'will_paginate', '~> 4.0'
+
+gem "importmap-rails", "~> 1.2"

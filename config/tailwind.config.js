@@ -10,12 +10,20 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+        'vegetables_bg': "url('vegetables.jpg')",
         'logo': "url('logo.png')",
-        'bg_img': "url('bg.jpg')"
+        'bg_img': "url('bg.jpg')",
+        'home_bg': "url('home-bg.svg')"
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        link: "#2563eb",
+        primary: "#701a75",
+        primary_light: "#c026d3",
+        gray: "#737373",
+      }
     },
   },
   plugins: [

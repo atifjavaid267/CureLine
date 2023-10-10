@@ -7,14 +7,11 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> %>
+    <%= javascript_include_tag "/assets/application.js", "data-turbo-track": "reload" %>
   </head>
   <body>
-    <% if user_signed_in? %>
-      <div class="fixed w-full top-0 z-10">
-        <%= render "shared/navbar" %>
-      </div>
-      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 relative flex h-16 bg-gray-900"></div>
-    <% end %>
+    <%= render partial: "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
   </body>
