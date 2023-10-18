@@ -1,4 +1,3 @@
-
 <% menu = menu_items %>
 <div class="fixed top-0 z-40 w-full h-16" data-controller="navbar">
   <nav class="flex pl-5 lg:pl-8 items-center justify-between h-full w-full bg-white bg-opacity-30 backdrop-blur-lg">
@@ -25,7 +24,7 @@
       </div>
     </div>
   </nav>
-  <div data-navbar-target="mobileMenu" class="hidden lg:hidden z-50 top-0 h-auto text-md bg-primary bg-opacity-95 flex flex-col px-2 pb-3 rounded-b-3xl">
+  <div data-navbar-target="mobileMenu" class="hidden lg:hidden z-50 top-0 h-auto text-md bg-primary flex flex-col px-2 pb-3 rounded-b-3xl bg-opacity-60 backdrop-blur-lg">
     <%= image_tag "cross.svg", class: "h-8 w-8 my-2 self-end", data: { action: "click->navbar#hideMobileMenu" } %>
     <ul class="flex flex-col space-y-5 py-5 text-white mr-5 ml-3 items-left">
       <% menu.each do |name, path| %>
