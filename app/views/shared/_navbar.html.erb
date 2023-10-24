@@ -24,17 +24,22 @@
       </div>
     </div>
   </nav>
-  <div data-navbar-target="mobileMenu" class="hidden lg:hidden z-50 top-0 h-auto text-md bg-primary flex flex-col px-2 pb-3 rounded-b-3xl bg-opacity-60 backdrop-blur-lg">
-    <%= image_tag "cross.svg", class: "h-8 w-8 my-2 self-end", data: { action: "click->navbar#hideMobileMenu" } %>
-    <ul class="flex flex-col space-y-5 py-5 text-white mr-5 ml-3 items-left">
-      <% menu.each do |name, path| %>
-        <li><%= link_to name, path, class: "hover:bg-gray-200 rounded-lg" %></li>
+  <div data-navbar-target="mobileMenu" class="hidden lg:hidden top-0 h-screen z-50 text-md bg-primary flex justify-between flex-col px-2 pb-20 rounded-b-3xl bg-opacity-80 backdrop-blur-lg">
+    <%= image_tag "cross.svg", class: "h-8 w-8 my-2 self-end mt-6 mr-4", data: { action: "click->navbar#hideMobileMenu" } %>
+    <ul class="flex flex-col space-y-5 py-5 text-white mr-5 ml-3 items-center justify-center">
+      <% menu.each_with_index do |(name, path), index| %>
+        <li><%= link_to name, path, class: "hover:bg-gray-200 rounded-lg font-semibold" %></li>
+        <% if index < menu.size - 1 %>
+          <li class="w-20 border-t-2 mt-2 pt-2 border-gray"></li>
+        <% end %>
       <% end %>
     </ul>
-    <% if user_signed_in? %>
-      <%= link_to "Sign out", destroy_user_session_path, class: "bg-gray py-2 px-4 text-white font-semibold text-white text-center rounded-xl mt-5" %>
-    <% else %>
-      <%= link_to "Sign in", new_user_session_path, class: "bg-gray py-2 px-10 text-white font-semibold text-center rounded-xl mt-5" %>
-    <% end %>
+    <div class="flex mb-10">
+      <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path, class: "w-full bg-gray py-2 px-4 text-white font-semibold text-white text-center rounded-xl" %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path, class: "w-full bg-gray py-2 px-10 text-white font-semibold text-white text-center rounded-xl" %>
+      <% end %>
+    </div>
   </div>
 </div>
