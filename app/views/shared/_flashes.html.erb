@@ -1,10 +1,10 @@
 <% if notice %>
-  <div class="fixed z-30 mt-20 right-0 bg-light_yellow p-5 text-dark_yellow border-l-4 border-dark_yellow rounded-lg">
+  <div data-controller="flashes" data-flashes-target="flashMessage" data-action="flashes#hideFlashMessage" class="fixed z-30 mt-20 right-0 bg-light_green p-5 text-dark_green border-l-4 border-dark_green rounded-l-lg">
     <%= notice %>
   </div>
 <% end %>
 <% if alert %>
-  <div class="fixed z-30 mt-20 right-0 bg-light_red p-5 text-dark_red border-l-4 border-dark_red rounded-lg">
+  <div data-controller="flashes" data-flashes-target="flashMessage" data-action="flashes#hideFlashMessage" class="fixed z-30 mt-20 right-0 bg-light_red p-5 text-dark_red border-l-4 border-dark_red rounded-l-lg">
     <%= alert %>
   </div>
 <% end %>
