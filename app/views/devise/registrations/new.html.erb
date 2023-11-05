@@ -30,13 +30,13 @@
       <div class="actions mt-5">
         <%= f.submit "Sign up", class: "w-full py-2 text-white rounded-sm px-32 bg-primary hover:bg-primary_light" %>
       </div>
-      <div class="mt-10 mr-16">
-        <%- if controller_name != 'sessions' %>
-          <span>Already have an account?
-            <%= link_to "Log in", new_session_path(resource_name), class: "text-link hover:underline" %>
-          </span>
-        <% end %>
-      </div>
     <% end %>
+    <div class="mt-10 mr-16">
+      <% if controller_name != 'sessions' %>
+        <span>Already have an account?
+          <%= link_to "Log in", new_session_path(resource_name), class: "text-link hover:underline" %>
+        </span>
+      <% end %>
+    </div>
   </div>
 </div>

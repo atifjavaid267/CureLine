@@ -21,7 +21,7 @@
               </div>
             <% end %>
             <div class="flex justify-between">
-              <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <% if devise_mapping.registerable? && controller_name != 'registrations' %>
                 <%= link_to "Sign up", new_registration_path(resource_name), class: "text-link font-semibold mr-2 hover:underline" %><br />
               <% end %>
             </div>
@@ -31,12 +31,12 @@
       <div class="actions mt-5">
         <%= f.submit "Log in", class: "w-full py-2 text-white rounded-sm px-32 bg-primary hover:bg-primary_light" %>
       </div>
-      <div class="mt-10 pr-14">
-        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-          <span>Forgot your password?</span>
-          <%= link_to "click here", new_password_path(resource_name), class: "text-link hover:underline" %><br />
-        <% end %>
-      </div>
     <% end %>
+    <div class="mt-10 pr-14">
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <span>Forgot your password?</span>
+        <%= link_to "click here", new_password_path(resource_name), class: "text-link hover:underline" %><br />
+      <% end %>
+    </div>
   </div>
 </div>
